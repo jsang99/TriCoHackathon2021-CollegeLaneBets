@@ -13,8 +13,8 @@ nameEntry = Entry(homePage, textvariable=name).grid(row=0, column=1)
 
 # country label and country entry box
 countryLabel = Label(homePage, text="Please enter your country's name:").grid(row=1, column=0)
-countryLabel = StringVar()
-countryEntry = Entry(homePage, textvariable=countryLabel, show='*').grid(row=1, column=1)
+country = StringVar()
+countryEntry = Entry(homePage, textvariable=country, show='*').grid(row=1, column=1)
 
 
 # start game button
