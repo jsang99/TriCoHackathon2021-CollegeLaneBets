@@ -1,46 +1,75 @@
-msg = "Hello world!"
-print(msg)
+"""
+The main file that executes the game.
+Date: 02-02-2021
+"""
 
-# Scenarios and starting conditions for exp and fp (adjust based on character/difficulty)
-stats = [(0, 0), (1, 1)]  # dummy assignment in the format of (exp,fp)
+from utils import *
 
-# dummy base stats
-# expenditure
-exp = stats[0][0]  # dummy assignment
-# carbon footprint
-fp = stats[0][1]  # dummy assignment
+def main():
+    intro()
+    cfoot = 0
 
-# dictionary of Choices in the format of 'name': (changeExp, changeFp, good_or_bad)
-choices = {
-    'C1': (1, -1, False)
-}
+    count = 0
+    while count < 3: #simulates the one week runtime of the game
+        daily_menu()
+        count+=1
+        print("\nDay", count, "is finished.")
+        print("Your carbon footprint is now:", cfoot)
+#-----------------------------------------------------------------
+"""
+intro
+prints the welcome message
+"""
+def intro():
+    print("Welcome to [gamename]!")
 
+#-----------------------------------------------------------------
+"""
+daily_menu
+Handles the choices a player makes for a given day.
+"""
+def daily_menu():
+    transport_opts = ["bus", "bike", "horse", "car"]
+    food_opts = ["waffle", "burger", "salad", "coffee", "water"]
+    waste_opts = ["recycle", "compost", "trash"]
+    energy_opts = ["solar", "Room Light", "Charge Phone", ]
 
-# Class of Player
-class Player:
-    # initialize, datatype:(str, int/float, int/float, bool)
-    def __init__(self, exp, fp):
-        self.exp = exp
-        self.fp = fp
+    #Ask about transport
+    print("\nMake your TRANSPORT choice for the day.")
+    choice = menu(transport_opts)
+    print("You chose:", transport_opts[choice-1])
 
-    def showStats(self):
-        print("The player currently has expenditure %s and carbon footprint %s" % (exp, fp))
+    #Ask about food
+    print("\nMake your FOOD choice for the day.")
+    choice = menu(food_opts)
+    print("You chose:", food_opts[choice-1])
 
-    def modifyExp(self, expChange):
-        self.exp += expChange
-        print("the new exp is %s" % self.exp)
+    #Ask about waste
+    print("\nMake your WASTE choice for the day.")
+    choice = menu(waste_opts)
+    print("You chose:", waste_opts[choice-1])
 
-    def modifyFp(self, fpChange):
-        self.fp += fpChange
-        print("the new fp is %s" % self.fp)
+    #Ask about energy
+    print("\nMake your ENERGY choice for the day.")
+    choice = menu(energy_opts)
+    print("You chose:", energy_opts[choice-1])
+        
+#-----------------------------------------------------------------   
+"""
+def userInputCheck(userChoice, availableChoices):
+    """
+    #This function returns true if the user selects a choice
+    #that is available. If not, it returns false
+    """
 
+    for i in range(len(availableChoices)):
+        if userChoice not in availableChoices:
+            return False
+    
+    return True
+"""
+#-----------------------------------------------------------------
 
-if __name__ == "__main__":
-    # basic test codes below
-    # subject to changes
-    player0 = Player(exp, fp)
-    player0.showStats()
-    newChoice = input("What is your choice: ")  # only 'C1' works for now
-    print(choices[newChoice])
-    player0.modifyExp(choices[newChoice][0])
-    player0.showStats()
+#create item/choice class
+
+main()
