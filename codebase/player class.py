@@ -13,7 +13,6 @@ choices = {
     'C1': (-1, -1, True)
 }
 
-
 # Class of Player
 class Player:
     # initialize, datatype:(str, int/float, int/float, bool)
@@ -36,7 +35,6 @@ class Player:
         self.exp += choices[newChoice][0]
         self.fp += choices[newChoice][1]
         print("the new exp is %s, the new fp is %s" % (self.exp, self.fp))
-
 
 # basic test codes below
 # subject to changes
