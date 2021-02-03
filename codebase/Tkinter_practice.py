@@ -29,5 +29,12 @@ two.pack(fill=X)
 three = Label(root, text="Three",bg = "yellow",fg="green")
 three.pack(side=LEFT,fill=Y)
 
+#function binding to button
+def printSmth():
+    print("smth lmao")
+
+button4 = Button(root,text="print something", command=printSmth)
+button4.pack(side=BOTTOM)
+
 #keep window running
 root.mainloop()
