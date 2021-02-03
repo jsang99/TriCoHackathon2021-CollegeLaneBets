@@ -2,6 +2,19 @@
 Utilities for game
 Date: 02-02-2021
 """
+from item import *
+
+def loadChoices(filename):
+    """load choices data from file, return list of choice objs"""
+    inf = open(filename,"r")
+    lines = inf.readlines()
+    inf.close()
+    choices = []
+    for line in lines:
+        scenario,consequence,exp,cfoot = line.strip().split(";")
+        c = Item(scenario, consequence, int(exp), int(cfoot))
+        choices.append(c)
+    return choices
 
 def menu(opts):
     """display menu, given a list, make sure we get valid menu input"""
