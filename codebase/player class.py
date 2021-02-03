@@ -10,7 +10,7 @@ fp = stats[0][1]  # dummy assignment
 
 # dictionary of Choices in the format of 'name': (changeExp, changeFp, good_or_bad)
 choices = {
-    'C1': (1, -1, False)
+    'C1': (-1, -1, True)
 }
 
 
@@ -22,7 +22,7 @@ class Player:
         self.fp = fp
 
     def showStats(self):
-        print("The player currently has expenditure %s and carbon footprint %s" % (exp, fp))
+        print("The player currently has expenditure %s and carbon footprint %s" % (self.exp, self.fp))
 
     def modifyExp(self, expChange):
         self.exp += expChange
@@ -40,5 +40,6 @@ player0.showStats()
 newChoice = input("What is your choice: ")  # only 'C1' works for now
 print(choices[newChoice])
 player0.modifyExp(choices[newChoice][0])
+player0.modifyFp(choices[newChoice][1])
 player0.showStats()
 ##### Kevin End #####
