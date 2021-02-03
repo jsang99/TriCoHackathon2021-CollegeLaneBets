@@ -1,6 +1,6 @@
 # :zap: :computer: :zap: Tri-Co Hackathon 2021 :zap: :computer: :zap:
 
-*This is a sample submission repository for Tri-Co Hackathon 2021. You can [fork this repo](https://help.github.com/articles/fork-a-repo/) and use this as a starting point.*
+*This is a submission repository for Tri-Co Hackathon 2021. You can [fork this repo](https://help.github.com/articles/fork-a-repo/).
 
 ## Team Name
 
