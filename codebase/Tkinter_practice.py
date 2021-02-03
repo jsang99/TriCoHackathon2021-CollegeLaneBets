@@ -21,5 +21,13 @@ button1.pack(side=LEFT)
 button2.pack(side=RIGHT)
 button3.pack()
 
+#label background and foreground, and filling sides
+one = Label(root, text="One",bg = "red",fg="white")
+one.pack()
+two = Label(root, text="Two",bg = "black",fg="green")
+two.pack(fill=X)
+three = Label(root, text="Three",bg = "yellow",fg="green")
+three.pack(side=LEFT,fill=Y)
+
 #keep window running
 root.mainloop()
