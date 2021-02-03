@@ -11,8 +11,8 @@ def loadChoices(filename):
     inf.close()
     choices = []
     for line in lines:
-        scenario,consequence,exp,cfoot = line.strip().split(";")
-        c = Item(scenario, consequence, int(exp), int(cfoot))
+        scenario,consequence,exp,cfoot,consq_alt,exp_alt,cfoot_alt,tag,ptag = line.strip().split(";")
+        c = Item(scenario, consequence, int(exp), int(cfoot), consq_alt, int(exp_alt), int(cfoot_alt), tag, ptag)
         choices.append(c)
     return choices
 

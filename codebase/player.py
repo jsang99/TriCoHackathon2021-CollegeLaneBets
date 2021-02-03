@@ -22,6 +22,8 @@ class Player(object):
         self.exp+=exp
     def setCarbonFoot(self, cfoot):
         self.cfoot+=cfoot
+    def addChoice(self, key, value):
+        self.choices[key] = value
     
 
 

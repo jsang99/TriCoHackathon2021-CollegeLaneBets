@@ -4,25 +4,58 @@ Date: 02-02-2021
 """
 from utils import *
 from player import *
+import random
 
 def main():
     player = intro()
 
     #load a scenario
     c_list = loadChoices("choices.txt")
-    print("\n", c_list[0].getScenario())
-
-    pick = input("Y/N: ")
-    if pick == "Y":
-        player.setExp(c_list[0].getExp())
-        player.setCarbonFoot(c_list[0].getCarbonFoot())
-        print("\n", c_list[0].getConsq())
-        print("\nYour resulting Expenditure:", player.getExp())
-        print("Your resulting Carbon Footprint Score:", player.getCarbonFoot(),"\n")
+    random.shuffle(c_list)
+    
+    for i in range(len(c_list)):
+        print("\n%s" %c_list[i].getScenario())
+        opts = ["Yes", "No", "Quit"]
+        pick = menu(opts)
+        if pick == 1:
+            player.addChoice(c_list[i].getTag(), True) #add choice to player data
+            if c_list[i].getPTag() in player.choices: #check if prereq exists
+                player.setExp(c_list[i].getExpAlt()) #update player expenditure
+                player.setCarbonFoot(c_list[i].getCarbonFootAlt()) #update player carbon footprint
+                print("\n%s" %c_list[i].getConsqAlt())
+            else:
+                player.setExp(c_list[i].getExp()) #update player expenditure
+                player.setCarbonFoot(c_list[i].getCarbonFoot()) #update player carbon footprint
+                print("\n%s" %c_list[i].getConsq())
+            print("\nYour resulting Expenditure:", player.getExp())
+            print("Your resulting Carbon Footprint Score:", player.getCarbonFoot(),"\n")
+        elif pick == 2:
+            print("Nothing chosen.")
+        else:
+            print("Thx for playing!")
+            print("\nYour final Expenditure:", player.getExp())
+            print("Your final Carbon Footprint Score:", player.getCarbonFoot(),"\n")
+            break
     
     
-    #print("\nDay", count, "is finished.")
-    #print("Your carbon footprint is now:", cfoot)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 #-----------------------------------------------------------------
 """
 intro
@@ -38,37 +71,6 @@ def intro():
     player = Player(name, country_name)
     return player
 
-#-----------------------------------------------------------------
-"""
-daily_menu
-Handles the choices a player makes for a given day.
-
-def daily_menu():
-    transport_opts = ["bus", "bike", "horse", "car"]
-    food_opts = ["waffle", "burger", "salad", "coffee", "water"]
-    waste_opts = ["recycle", "compost", "trash"]
-    energy_opts = ["solar", "Room Light", "Charge Phone", ]
-
-    #Ask about transport
-    print("\nMake your TRANSPORT choice for the day.")
-    choice = menu(transport_opts)
-    print("You chose:", transport_opts[choice-1])
-
-    #Ask about food
-    print("\nMake your FOOD choice for the day.")
-    choice = menu(food_opts)
-    print("You chose:", food_opts[choice-1])
-
-    #Ask about waste
-    print("\nMake your WASTE choice for the day.")
-    choice = menu(waste_opts)
-    print("You chose:", waste_opts[choice-1])
-
-    #Ask about energy
-    print("\nMake your ENERGY choice for the day.")
-    choice = menu(energy_opts)
-    print("You chose:", energy_opts[choice-1])
-"""    
 #-----------------------------------------------------------------   
 
 
