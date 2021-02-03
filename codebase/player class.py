@@ -24,13 +24,18 @@ class Player:
     def showStats(self):
         print("The player currently has expenditure %s and carbon footprint %s" % (self.exp, self.fp))
 
-    def modifyExp(self, expChange):
-        self.exp += expChange
-        print("the new exp is %s" % self.exp)
+    #def modifyExp(self, expChange):
+    #    self.exp += expChange
+    #    print("the new exp is %s" % self.exp)
 
-    def modifyFp(self, fpChange):
-        self.fp += fpChange
-        print("the new fp is %s" % self.fp)
+    #def modifyFp(self, fpChange):
+    #    self.fp += fpChange
+    #    print("the new fp is %s" % self.fp)
+
+    def modify(self, newChoice):
+        self.exp += choices[newChoice][0]
+        self.fp += choices[newChoice][1]
+        print("the new exp is %s, the new fp is %s" % (self.exp, self.fp))
 
 
 # basic test codes below
@@ -39,7 +44,6 @@ player0 = Player(exp, fp)
 player0.showStats()
 newChoice = input("What is your choice: ")  # only 'C1' works for now
 print(choices[newChoice])
-player0.modifyExp(choices[newChoice][0])
-player0.modifyFp(choices[newChoice][1])
+player0.modify(newChoice)
 player0.showStats()
 ##### Kevin End #####
