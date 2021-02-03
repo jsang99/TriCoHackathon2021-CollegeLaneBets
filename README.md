@@ -1,36 +1,27 @@
 # :zap: :computer: :zap: Tri-Co Hackathon 2021 :zap: :computer: :zap:
 
-*This is a sample submission repository for Tri-Co Hackathon 2019. You can [fork this repo](https://help.github.com/articles/fork-a-repo/) and use this as a starting point.*
+*This is a sample submission repository for Tri-Co Hackathon 2021. You can [fork this repo](https://help.github.com/articles/fork-a-repo/) and use this as a starting point.*
 
 ## Team Name
 
-*Your name here! & best way to contact you all during the Hack*
+CollegeLaneBets
 
 ## Team Members
 
-- Teammate 1, School
-- Teammate 2, School
-- Teammate 3, School
+- Chengpei Li, HC
+- Kevin Sang, HC
+- Kayla Thompson, BMC
+- Cisco Velasco, SC
+- Vladimir Soto-Avina, SC
 
 ## Project Description
 
-*A clear statement of the challenges/issues/problems/gaps your project engages as well as a brief, high-level description of how your project engage the areas you've identified. What is the value of your approach? Who are the intended users?*
-
-## Protoype Summary
-
-*Describe the basic functionality of your prototype. What are the features you were able to implement? What features would you like to implement?*
-
-## Live URLs
-
-*List any URLs relevant to demonstrating your prototype*
+Carbon President is a point-system management game where the player’s choices impact not only the country’s total expenditure, but also the country’s carbon footprint. This game will educate the players on the basics of sustainability and its complexities.
 
 ## Presentation
 
-*List any links to your presentation or any related visuals you want to share.*
+https://docs.google.com/presentation/d/1b_d_wd9oTKNUN_CxvA6fpMylZPDW1taoxvw8_v0_rxg/edit?usp=sharing
 
-## Next Steps
-
-*What do you need to do next to turn this prototype into a working solution?*
 
 ## License
 
