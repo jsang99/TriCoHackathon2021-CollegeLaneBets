@@ -3,8 +3,6 @@ The main file that executes the game.
 Date: 02-02-2021
 """
 
-from utils import *
-
 def main():
     intro()
     cfoot = 0
@@ -55,21 +53,26 @@ def daily_menu():
     print("You chose:", energy_opts[choice-1])
         
 #-----------------------------------------------------------------   
-"""
-def userInputCheck(userChoice, availableChoices):
-    """
-    #This function returns true if the user selects a choice
-    #that is available. If not, it returns false
-    """
+def menu(opts):
+    """display menu, given a list, make sure we get valid menu input"""
+    for i in range(len(opts)):
+        print("%2d. %s" % (i+1,opts[i]))
+    min = 1
+    max = len(opts)
+    while True:
+        pick = getInt("Your choice? ")
+        if pick >= min and pick <= max:
+            return pick
+        else:
+            print("please enter a valid choice!!!")
+#-----------------------------------------------------------------   
 
-    for i in range(len(availableChoices)):
-        if userChoice not in availableChoices:
-            return False
-    
-    return True
-"""
-#-----------------------------------------------------------------
-
-#create item/choice class
+def getInt(prompt):
+    """get a positive integer"""
+    n = input(prompt)
+    if n.isdigit():
+        return int(n)
+    else:
+        return getInt(prompt)
 
 main()
