@@ -46,5 +46,21 @@ frame = Frame (root, width = 300, height = 250)
 frame.bind("<Button-1>",leftClick)
 frame.bind("<Button-2>",rightClick)
 frame.pack()
+
+#new class
+class newButtons:
+    def __init__(self, master):
+        newFrame = Frame(master)
+        newFrame.pack()
+
+        self.printButton = Button(frame, text = "print msg", command = self.printMessage)
+        self.printButton.pack(side = LEFT)
+
+        self.quitButton = Button(frame, text = "quit", command = frame.quit)
+        self.quitButton.pack(side = RIGHT)
+    def printMessage(self):
+        print("test,test,test")
+#dummy object
+b = newButtons(root)
 #keep window running
 root.mainloop()
