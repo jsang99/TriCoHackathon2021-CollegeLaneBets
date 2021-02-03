@@ -36,5 +36,15 @@ def printSmth():
 button4 = Button(root,text="print something", command=printSmth)
 button4.pack(side=BOTTOM)
 
+#mouse click event
+def leftClick(event):
+    print("Left")
+def rightClick(event):
+    print("Right")
+
+frame = Frame (root, width = 300, height = 250)
+frame.bind("<Button-1>",leftClick)
+frame.bind("<Button-2>",rightClick)
+frame.pack()
 #keep window running
 root.mainloop()
