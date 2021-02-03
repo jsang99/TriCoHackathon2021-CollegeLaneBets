@@ -6,7 +6,7 @@ class Player(object):
         self.name = name
         self.country = country
         self.exp = 0
-        self.cfoot = 0
+        self.cfoot = 5
         self.choices = {} #a dictionary that stores the player's choices
 
     def getName(self):
